@@ -1,0 +1,45 @@
+APP:
+  # Sets the interval at which pictures are taken in seconds.
+  # 1 second is the minimum value, and is considered
+  # extremely fast. You will find
+  # that the Pi camera cannot keep up consistently. Occasionally,
+  # pictures will be taken in intervals of up to 5 or even 7 seconds.
+  # Increasing the interval will not PREVENT this problem,
+  # but it will REDUCE the frequency of its occurrence.
+  # GPS data will still be attached to the photos successfully,
+  # but the distance you walk between photos will be variable.
+  # I recommend using the lowest interval you think makes sense
+  # for you.
+  CAPTURE_INTERVAL: 1
+
+  # Delays the beginning of the program to allow the Raspberry Pi to boot.
+  # Measured in seconds.
+  # If this value is not set high enough, the program will error out, and
+  # no photos will be taken at all. 30 is the recommended value.
+  PROGRAM_DELAY: 0
+
+  # Sets the Pi camera's photo resolution.
+  # 3280x2464 is the absolute maximum resolution.
+  # Lower values are acceptable, and may lead to faster image
+  # capturing, but lower image quality is the tradeoff.
+  RESOLUTION: 3280x2464
+
+  # Sets the amount of time the script captures photos and
+  # GPS data in minutes. This is effectively how long the script
+  # is set to run. The only limitation on this value is the size of
+  # your USB drive. 
+  RUNTIME_MINUTES: 1
+
+  # Camera orientation. Recommended value is 270, but you may change this
+  # freely if you feel you need to.
+  ROTATION: 270
+
+  # Set this value to TRUE if you have a camera module connected and wish to use it.
+  # Set it to FALSE if you do not.
+  # The vast majority of the time, you'll probably want this set to TRUE.
+  # Only set it to FALSE if you plan on strictly getting GPS data without images.
+  USE_CAMERA: TRUE
+
+  # Set this value to TRUE if you have a GPS module connected and wish to use it.
+  # Set it to FALSE if you do not.
+  USE_GPS: TRUE
