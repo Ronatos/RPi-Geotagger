@@ -16,7 +16,7 @@ APP:
   # Measured in seconds.
   # If this value is not set high enough, the program will error out, and
   # no photos will be taken at all. 30 is the recommended value.
-  PROGRAM_DELAY: 0
+  PROGRAM_DELAY: 30
 
   # Sets the Pi camera's photo resolution.
   # 3280x2464 is the absolute maximum resolution.
@@ -28,7 +28,7 @@ APP:
   # GPS data in minutes. This is effectively how long the script
   # is set to run. The only limitation on this value is the size of
   # your USB drive. 
-  RUNTIME_MINUTES: 1
+  RUNTIME_MINUTES: 5
 
   # Camera orientation. Recommended value is 270, but you may change this
   # freely if you feel you need to.
