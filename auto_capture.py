@@ -141,13 +141,19 @@ runtime = int(configuration['APP']['RUNTIME_MINUTES']) * 60
 # number of pictures to take
 num_pictures = math.floor(runtime / capture_interval)
 
+# shutter speed in microseconds
+shutter_speed = int(configuration['APP']['SHUTTER_SPEED'])
+
+# auto white balance mode
+awb_mode = str(configuration['APP']['AWB_MODE'])
+
 # bool for whether or not a camera module is being used
 use_camera = bool(configuration['APP']['USE_CAMERA'])
 
 # bool for whether or not a GPS module is attached
 use_gps = bool(configuration['APP']['USE_GPS'])
 
-logging.info('Configuration file aerial-survey.yaml loaded with values CAPTURE_INTERVAL=' + str(capture_interval) + ', PROGRAM_DELAY=' + str(program_delay) + ', RESOLUTION=' + str(resolution) + ', ROTATION=' + str(rotation) + 'RUNTIME(s)=' + str(runtime) + 'USE_CAMERA=' + str(use_camera) + 'USE_GPS=' + str(use_gps))
+logging.info('Configuration file aerial-survey.yaml loaded with values CAPTURE_INTERVAL=' + str(capture_interval) + ', PROGRAM_DELAY=' + str(program_delay) + ', RESOLUTION=' + str(resolution) + ', ROTATION=' + str(rotation) + ', RUNTIME(s)=' + str(runtime) + ', USE_CAMERA=' + str(use_camera) + ', USE_GPS=' + str(use_gps) + ', SHUTTER_SPEED=' + str(shutter_speed) + ', AWB_MODE=' + awb_mode)
 logging.info('Sleeping for ' + str(program_delay) + ' seconds...')
 
 # delay execution of program while OS boots
@@ -161,6 +167,8 @@ start_time = datetime.now()
 capture_folder_name = "Captures_" + time.strftime("%Y-%m-%d_%H-%M-%S")
 camera = PiCamera(resolution=resolution)
 camera.rotation = rotation
+camera.shutter_speed = shutter_speed
+camera.awb_mode = awb_mode
 
 logging.info("Camera initialized successfully.")
 

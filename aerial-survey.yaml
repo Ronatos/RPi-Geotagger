@@ -16,7 +16,7 @@ APP:
   # Measured in seconds.
   # If this value is not set high enough, the program will error out, and
   # no photos will be taken at all. 30 is the recommended value.
-  PROGRAM_DELAY: 30
+  PROGRAM_DELAY: 0
 
   # Sets the Pi camera's photo resolution.
   # 3280x2464 is the absolute maximum resolution.
@@ -40,6 +40,26 @@ APP:
   # Only set it to FALSE if you plan on strictly getting GPS data without images.
   USE_CAMERA: TRUE
 
+  # If USE_CAMERA is set to TRUE, this value will be used; otherwise, it will be ignored.
+  # Set SHUTTER_SPEED to 0 if you would like the camera to automatically handle this.
+  # If you prefer more control over the value, you may adjust it accordingly.
+  # SHUTTER_SPEED is measured in microseconds.
+  SHUTTER_SPEED: 0
+
+  # AWB_MODE stands for "auto white balance mode". auto is the default.
+  # This setting may be set to any of the following presets:
+    # auto
+    # off
+    # sunlight
+    # cloudy
+    # shade
+    # tungsten
+    # fluorescent
+    # incandescent
+    # flash
+    # horizon
+  AWB_MODE: auto
+
   # Set this value to TRUE if you have a GPS module connected and wish to use it.
   # Set it to FALSE if you do not.
-  USE_GPS: TRUE
+  USE_GPS: FALSE
