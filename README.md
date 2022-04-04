@@ -79,6 +79,7 @@ A program written for Dr. Christopher Baynard of the University of North Florida
 3. Now type ```./install.sh``` to install the required packages. This may take a few moments.
 
 4. Once the installation is complete, type "crontab -e". If prompted to select an editor, nano is the easiest to use.
+
 ![image](https://user-images.githubusercontent.com/28655198/161564503-0180fdd5-a817-406a-a704-166cf384181a.png)
 
 5. Navigate to the bottom of the file and add the following line: ```@reboot /usr/bin/python3 /home/pi/auto_capture.py```
